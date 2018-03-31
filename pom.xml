@@ -8,5 +8,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>spring-sample-oauth2</module>
+		<module>spring-sample-swagger</module>
 	</modules>
 </project>
