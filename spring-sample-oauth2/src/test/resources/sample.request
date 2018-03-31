@@ -1,0 +1,17 @@
+---
+
+POST /oauth/token HTTP/1.1
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=my_app&scope=read+write&username=foo&password=pass
+
+---
+
+POST /oauth/token HTTP/1.1
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=my_app&scope=read+write&username=bar&password=pass
+
+---

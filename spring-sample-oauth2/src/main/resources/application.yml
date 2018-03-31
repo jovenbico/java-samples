@@ -1,1 +1,8 @@
 ---
+
+security:
+  user:
+    password: passwrd
+logging:
+  level:
+    com.bicjo.sample: DEBUG
