@@ -25,3 +25,37 @@ client_id=my_bar&grant_type=password&scope=read+write&username=bar&password=pass
 GET /oauth/authorize?client_id=my_bar&amp;response_type=token&amp;scope=read write&amp;redirect_uri=http://localhost:8000/bar/hello/world HTTP/1.1
 Host: localhost:8000
 Content-Type: application/x-www-form-urlencoded
+
+---
+
+http://login-foo.example.com/oauth/authorize?client_id=my_foo&response_type=token&redirect_uri=http://login-foo.example.com/hello/world
+
+http://login-bar.example.com/oauth/authorize?client_id=my_bar&response_type=token&redirect_uri=http://login-bar.example.com/bar/hello/world
+
+---
+
+$ nano example.com
+#login-foo.example.com
+#login-bar.example.com
+
+server {
+    listen 80;
+    server_name login-foo.example.com;
+
+    location / {
+        proxy_pass http://localhost:8000/;
+    }
+}
+
+server {
+    listen 80;
+    server_name login-bar.example.com;
+
+    location /login {
+        proxy_pass http://localhost:8000/bar/login;
+    }
+
+    location / {
+        proxy_pass http://localhost:8000/;
+    }
+}
