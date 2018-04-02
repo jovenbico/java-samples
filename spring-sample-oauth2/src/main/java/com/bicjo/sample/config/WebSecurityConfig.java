@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()//
 				.authorizeRequests()//
-				.antMatchers("/login", "/*/login").permitAll()//
+				.antMatchers("/login", "/bar/login").permitAll()//
 				.anyRequest().authenticated()//
 				.and()//
 				.formLogin()//
@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth//
 				.authenticationProvider(fooAuthenticationProvider)//
-				.authenticationProvider(barAuthenticationProvider)
+				.authenticationProvider(barAuthenticationProvider)//
 		// .inMemoryAuthentication()//
 		// .withUser("me").password("pass").roles("USER")//
 		;
