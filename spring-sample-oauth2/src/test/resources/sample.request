@@ -4,7 +4,13 @@ POST /oauth/token HTTP/1.1
 Host: localhost:8000
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&client_id=my_app&scope=read+write&username=foo&password=pass
+client_id=my_foo&grant_type=password&scope=read+write&username=foo&password=pass
+
+---
+
+GET /oauth/authorize?client_id=my_foo&amp;response_type=token&amp;scope=read write&amp;redirect_uri=http://localhost:8000/hello/world HTTP/1.1
+Host: localhost:8000
+Content-Type: application/x-www-form-urlencoded
 
 ---
 
@@ -12,6 +18,10 @@ POST /oauth/token HTTP/1.1
 Host: localhost:8000
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&client_id=my_app&scope=read+write&username=bar&password=pass
+client_id=my_bar&grant_type=password&scope=read+write&username=bar&password=pass
 
 ---
+
+GET /oauth/authorize?client_id=my_bar&amp;response_type=token&amp;scope=read write&amp;redirect_uri=http://localhost:8000/bar/hello/world HTTP/1.1
+Host: localhost:8000
+Content-Type: application/x-www-form-urlencoded

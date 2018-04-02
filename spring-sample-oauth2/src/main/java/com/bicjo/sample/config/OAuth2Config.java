@@ -28,9 +28,18 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory()//
-				.withClient("my_app")//
+				.withClient("my_foo")//
 				.authorities("read", "write")//
 				.authorizedGrantTypes("implicit", "password")//
+				.redirectUris("http://localhost:8000/hello/world")//
+				.resourceIds("oauth2/foo")//
+				.autoApprove(true)//
+				.and()//
+				.withClient("my_bar")//
+				.authorities("read", "write")//
+				.authorizedGrantTypes("implicit", "password")//
+				.redirectUris("http://localhost:8000/bar/hello/world")//
+				.resourceIds("oauth2/bar")//
 				.autoApprove(true)//
 		;
 	}
