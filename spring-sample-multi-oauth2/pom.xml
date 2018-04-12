@@ -7,7 +7,7 @@
 		<version>1.5.10.RELEASE</version>
 	</parent>
 	<groupId>com.bicjo.sample</groupId>
-	<artifactId>spring-sample-oauth2</artifactId>
+	<artifactId>spring-sample-multi-oauth2</artifactId>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
