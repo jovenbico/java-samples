@@ -1,0 +1,2 @@
+
+http://localhost:8000/oauth/authorize?client_id=my_foo&response_type=token&redirect_uri=http://localhost:8000/hello/world
