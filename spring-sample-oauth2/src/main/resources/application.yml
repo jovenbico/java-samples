@@ -1,0 +1,14 @@
+---
+server:
+  port: ${port:8000}
+security:
+  user:
+    password: passwrd
+logging:
+  level:
+    com.bicjo.sample: DEBUG
+    org.springframework.security: INFO
+spring.mustache:
+  expose-request-attributes: true
+  prefix: classpath:/templates/
+  suffix: .html
