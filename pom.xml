@@ -11,5 +11,6 @@
 		<module>spring-sample-oauth2</module>
 		<module>spring-sample-swagger</module>
 		<module>spring-sample-mongodb</module>
+		<module>spring-sample-resource</module>
 	</modules>
 </project>

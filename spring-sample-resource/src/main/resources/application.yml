@@ -1,0 +1,6 @@
+---
+server:
+  port: ${port:8001}
+security:
+  user:
+    password: passwrd
