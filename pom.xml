@@ -12,5 +12,6 @@
 		<module>spring-sample-swagger</module>
 		<module>spring-sample-mongodb</module>
 		<module>spring-sample-resource</module>
+		<module>spring-sample-hateoas</module>
 	</modules>
 </project>
